@@ -1,0 +1,3 @@
+*.pyc
+/todoapp/__pycache__/
+/todoproject/__pycache__/
