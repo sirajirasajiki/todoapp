@@ -1,4 +1,4 @@
 *.pyc
 todoapp/__pycache__/
-todoapp/migrations/
+todoapp/migrations/__pycache__/
 todoproject/__pycache__/
