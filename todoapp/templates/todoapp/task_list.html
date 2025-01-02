@@ -1,1 +1,14 @@
 <h1>Taskリスト</h1>
+
+<table>
+    <tr>
+        <th>タスク</th>
+        <th>ユーザー</th>
+    </tr>
+    {% for task in tasks %}
+    <tr>
+        <td>{{task.title}}</td>
+        <td>{{task.user}}</td>
+    </tr>
+    {% endfor %}
+</table>
