@@ -27,7 +27,7 @@ class TaskDetail(LoginRequiredMixin, DetailView):
 
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
-    fields =  ['title', 'description', 'compleated', 'createdDate']
+    fields =  ['title', 'description', 'compleated']
     success_url = reverse_lazy("tasks")
 
     def form_valid(self, form):
