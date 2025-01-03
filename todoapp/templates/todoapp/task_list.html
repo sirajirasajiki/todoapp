@@ -1,34 +1,51 @@
 {% extends 'todoapp/base.html' %}
 {% block content %}
 
-<h1>Taskリスト</h1>
-<a href="{% url 'create-task' %}">タスクの追加</a>
+<div class="header">
+    <h1>{{request.user}}のタスク</h1>
+</div>
 
-<form method="get">
-    {% csrf_token %}
-    <input type="text" name="search" value="{{search}}">
-    <input type="submit" value="検索">
-</form>
+<div class="searchWrapper">
+    <form method="get">
+        {% csrf_token %}
+        <input type="text" name="search" value="{{search}}" class="searchInput">
+        <input type="submit" value="検索" class="button">
+    </form>
+    <a href="{% url 'create-task' %}" class="addButton">+</a>
+</div>
 
-<table>
-    <tr>
-        <th>タスク</th>
-        <th>ユーザー</th>
-    </tr>
+<div class="tasksWrapper">
     {% for task in tasks %}
-    <tr>
-        <td>{{task.title}}</td>
-        <td>{{task.user}}</td>
-        <td><a href="{% url 'task' task.id %}">確認</a></td>
-        <td><a href="{% url 'edit-task' task.id %}">編集</a></td>
-        <td><a href="{% url 'delete-task' task.id %}">削除</a></td>
-    </tr>
+    <div class="taskWrapper">
+        <!-- タスクが完了 -->
+        {% if task.compleated %}
+        <div class="taskTitle">
+            <div class="taskCompletedIcon"></div>
+            <s><a href="{% url 'task' task.id %}">{{task}}</a></s>
+        </div>
+        <div>
+            <a href="{% url 'edit-task' task.id %}" class="editButton"> 🖉 </a>
+            <a href="{% url 'delete-task' task.id %}" class="deleteButton"> x </a>
+        </div>
+        {% else %}
+         <!-- タスク未完了 -->
+         <div class="taskTitle">
+            <div class="taskInCompletedIcon"></div>
+            <a href="{% url 'task' task.id %}">{{task}}</a>
+        </div>
+        <div>
+            <a href="{% url 'edit-task' task.id %}" class="editButton"> 🖉 </a>
+            <a href="{% url 'delete-task' task.id %}" class="deleteButton"> x </a>
+        </div>
+        {% endif %}
+    </div>
     {% endfor %}
-</table>
+
+</div>
 
 <div class="loginAndLogout">
     {% if request.user.is_authenticated %}
-    <p>{{request.user}}</p>
+    <!-- <p>{{request.user}}</p> -->
     <form method="post" action="{% url 'logout' %}">
         {% csrf_token %}
         <button type="submit">ログアウト</button>

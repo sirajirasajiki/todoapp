@@ -1,0 +1,150 @@
+body {
+    background-color: bisque;
+    font-family: "M PLUS Rounded 1c", serif;
+    padding-top: 55px;
+}
+
+.todoAppWrapper{
+    max-width: 530px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 5px -5px 15px 38px #777777;
+    border-radius: 10px;
+}
+
+a {
+    color: #595959;
+    text-decoration: none;
+}
+
+h1 {
+    margin: 0;
+}
+
+.header{
+    text-align: center;
+    padding: 20px 0;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 46%, rgba(0,212,255,1) 100%);
+    border-radius: 10px 10px 0 0;
+    color: white;
+}
+
+.taskWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-top: 1px solid rgba(51, 45, 45, 0.5);
+
+}
+
+.taskTitle{
+    display: flex;
+    align-items: center;
+}
+
+.taskCompletedIcon{
+    height: 20px;
+    width: 20px;
+    background-color: lightgreen;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.taskInCompletedIcon{
+    height: 20px;
+    width: 20px;
+    background-color: gray;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.loginAndLogout{
+    padding: 20px;
+}
+
+.loginAndLogout a{
+    color: lightcoral;
+}
+
+.loginAndLogout button{
+    color: blue;
+}
+
+.editButton{
+    color: chartreuse;
+}
+
+.deleteButton{
+    color: red;
+}
+
+/* タスク検索と追加のフォーム */
+.searchWrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.searchInput{
+    height: 24px;
+    outline: none;
+    border: 1px solid lightseagreen;
+    border-radius: 5px;
+    padding: 2px 4px;
+    width: 160px !important;
+}
+
+.button{
+    border: 1px solid lightskyblue;
+    padding: 4px 10px;
+    background-color: aliceblue;
+    color: lightskyblue;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.button:hover{
+    background-color: lightskyblue;
+    color: white;
+}
+
+.addButton{
+    font-size: 32px;
+    color: lightblue;
+}
+
+label {
+    display: block;
+}
+
+input[type="text"], textarea{
+    width: 100;
+}
+
+.confirmButton{
+    border: 1px solid lightskyblue;
+    padding: 4px 10px;
+    background-color: aliceblue;
+    color: lightskyblue;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.confirmButton:hover{
+    background-color: red;
+    color: white;
+}
+
+.accountWrapper{
+    padding: 10px 20px 20px 20px;
+}
+
+.accountWrapper p{
+    padding: 0px;
+    margin: 0;
+}

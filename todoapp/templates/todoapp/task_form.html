@@ -1,11 +1,12 @@
 {% extends 'todoapp/base.html' %}
 {% block content %}
-<h1>タスクの追加</h1>
-<a href="{% url 'tasks' %}">戻る</a>
+<div class="header">
+    <a href="{% url 'tasks' %}" style="color: white;">戻る</a>
+</div>
 
-<form action="" method="post">
+<form action="" method="post" style="padding: 20px;">
     <!-- as_pは各項目にpタグを追加する -->
     {% csrf_token %} {{form.as_p}}
-    <input type="submit" value="追加">
+    <input type="submit" value="追加" class="button">
 </form>
 {% endblock content %}
